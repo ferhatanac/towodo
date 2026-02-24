@@ -199,12 +199,12 @@
     <div class="footer">
         <div class="footer-left">© 2026 Towodo</div>
         <div class="footer-right">
-            <a href="/cdn-cgi/l/email-protection#157d7079797a55617a627a717a3b767a78" data-lang="tr">İletişim</a>
-            <a href="/cdn-cgi/l/email-protection#d5bdb0b9b9ba95a1baa2bab1bafbb6bab8" data-lang="en">Contact</a>
+            <a href="mailto:hello@towodo.com" data-lang="tr">İletişim</a>
+            <a href="mailto:hello@towodo.com" data-lang="en">Contact</a>
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         let currentLang='tr';
 
         (function detectLang(){
@@ -244,9 +244,23 @@
 
         function handleSubmit(e){
             e.preventDefault();
-            const form=document.getElementById('emailForm'),success=document.getElementById('formSuccess'),email=document.getElementById('emailInput').value;
-            console.log('Email collected:',email);
-            const emails=JSON.parse(localStorage.getItem('towodo_emails')||'[]');
-            emails.push({email,lang:currentLang,date:new Date().toISOString()});
-            localStorage.setItem('towodo_emails',JSON.stringify(emails));
-            form.style.d
+            const form=document.getElementById('emailForm'),success=document.getElementById('formSuccess'),email=document.getElementById('emailInput').value,btn=document.getElementById('submitBtn');
+            btn.disabled=true;
+            btn.textContent=currentLang==='tr'?'Gönderiliyor...':'Sending...';
+
+            fetch('https://script.google.com/macros/s/AKfycbxFlpzLdZBxq8oXgoasz5AJUXkFFmrk0rHlQgBWUvuK01j3UVDupZiloK2i_YGupfC-HQ/exec',{
+                method:'POST',
+                mode:'no-cors',
+                headers:{'Content-Type':'application/json'},
+                body:JSON.stringify({email:email,lang:currentLang})
+            }).then(()=>{
+                form.style.display='none';
+                success.classList.add('show');
+            }).catch(()=>{
+                form.style.display='none';
+                success.classList.add('show');
+            });
+        }
+    </script>
+</body>
+</html>
