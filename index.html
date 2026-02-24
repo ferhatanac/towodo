@@ -279,11 +279,11 @@
     <div class="footer">
         <div class="footer-left">© 2026 Towodo</div>
         <div class="footer-right">
-            <a href="/cdn-cgi/l/email-protection#bddbd8cfd5dcc9fddcd4dbd8cfcfd293ded2d0">İletişim / Contact</a>
+            <a href="mailto:ferhat@aiferro.com">İletişim / Contact</a>
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         const LANGS={
             tr:{ph:'E-posta adresin',btn:'Haberdar Ol',sending:'Gönderiliyor...'},
             en:{ph:'Your email address',btn:'Notify Me',sending:'Sending...'},
@@ -343,4 +343,11 @@
             fetch(url,{mode:'no-cors'}).then(()=>{
                 form.style.display='none';
                 success.classList.add('show');
-            }).catch(()=
+            }).catch(()=>{
+                form.style.display='none';
+                success.classList.add('show');
+            });
+        }
+    </script>
+</body>
+</html>
