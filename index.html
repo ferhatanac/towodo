@@ -199,12 +199,12 @@
     <div class="footer">
         <div class="footer-left">© 2026 Towodo</div>
         <div class="footer-right">
-            <a href="mailto:hello@towodo.com" data-lang="tr">İletişim</a>
-            <a href="mailto:hello@towodo.com" data-lang="en">Contact</a>
+            <a href="/cdn-cgi/l/email-protection#ddb5b8b1b1b29da9b2aab2b9b2f3beb2b0" data-lang="tr">İletişim</a>
+            <a href="/cdn-cgi/l/email-protection#fd9598919192bd89928a929992d39e9290" data-lang="en">Contact</a>
         </div>
     </div>
 
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         let currentLang='tr';
 
         (function detectLang(){
@@ -251,16 +251,8 @@
             fetch('https://script.google.com/macros/s/AKfycbxFlpzLdZBxq8oXgoasz5AJUXkFFmrk0rHlQgBWUvuK01j3UVDupZiloK2i_YGupfC-HQ/exec',{
                 method:'POST',
                 mode:'no-cors',
-                headers:{'Content-Type':'application/json'},
+                headers:{'Content-Type':'text/plain'},
                 body:JSON.stringify({email:email,lang:currentLang})
             }).then(()=>{
                 form.style.display='none';
-                success.classList.add('show');
-            }).catch(()=>{
-                form.style.display='none';
-                success.classList.add('show');
-            });
-        }
-    </script>
-</body>
-</html>
+                success.classList
