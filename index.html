@@ -248,11 +248,15 @@
             btn.disabled=true;
             btn.textContent=currentLang==='tr'?'Gönderiliyor...':'Sending...';
 
-            fetch('https://script.google.com/macros/s/AKfycbxFlpzLdZBxq8oXgoasz5AJUXkFFmrk0rHlQgBWUvuK01j3UVDupZiloK2i_YGupfC-HQ/exec',{
-                method:'POST',
-                mode:'no-cors',
-                headers:{'Content-Type':'text/plain'},
-                body:JSON.stringify({email:email,lang:currentLang})
-            }).then(()=>{
+            const url='https://script.google.com/macros/s/AKfycbwTgrnETzNGC9iao-_mS2S26BQzP15ENOzEb1h8OlaDBh9f9nVzCh13GnMb0FeRvj1uRw/exec?email='+encodeURIComponent(email)+'&lang='+currentLang;
+            fetch(url,{mode:'no-cors'}).then(()=>{
                 form.style.display='none';
-                success.classList
+                success.classList.add('show');
+            }).catch(()=>{
+                form.style.display='none';
+                success.classList.add('show');
+            });
+        }
+    </script>
+</body>
+</html>
