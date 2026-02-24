@@ -26,6 +26,11 @@
 
         .grain{position:fixed;inset:0;z-index:1;opacity:0.03;pointer-events:none;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");background-size:200px}
 
+        .hero-image{max-width:560px;width:90%;border-radius:16px;margin-bottom:40px;opacity:0;animation:fadeUp 1s ease-out 0.4s forwards;box-shadow:0 8px 40px rgba(0,0,0,0.4);border:1px solid rgba(216,140,60,0.1)}
+        .photo-credit{font-size:10px;color:var(--text-dim);margin-top:8px;opacity:0;animation:fadeUp 1s ease-out 0.45s forwards}
+        .photo-credit a{color:var(--text-dim);text-decoration:underline;transition:color 0.3s}
+        .photo-credit a:hover{color:var(--amber)}
+
         /* LANGUAGE SWITCHER */
         .lang-switch{position:fixed;top:24px;right:28px;z-index:10;display:flex;gap:0;background:rgba(255,255,255,0.03);border:1px solid rgba(255,255,255,0.06);border-radius:40px;padding:3px;backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px)}
         .lang-btn{padding:7px 16px;border:none;border-radius:30px;font-family:'DM Sans',sans-serif;font-size:11px;font-weight:500;letter-spacing:1.5px;cursor:pointer;transition:all 0.35s;background:transparent;color:var(--text-dim)}
@@ -141,6 +146,9 @@
             </svg>
         </div>
 
+        <img src="hero.jpg" alt="Planning goals with coffee and notebook" class="hero-image" loading="eager">
+        <p class="photo-credit">Photo by <a href="https://unsplash.com/@kawerodriguess?utm_source=towodo&utm_medium=referral" target="_blank" rel="noopener">Kawê Rodrigues</a> on <a href="https://unsplash.com/?utm_source=towodo&utm_medium=referral" target="_blank" rel="noopener">Unsplash</a></p>
+
         <div class="hero lang-fade">
             <h1 class="tagline" data-lang="tr">Hedeflerini<br><em>gerçeğe</em> dönüştür</h1>
             <h1 class="tagline" data-lang="en">Turn your goals<br>into <em>reality</em></h1>
@@ -199,12 +207,12 @@
     <div class="footer">
         <div class="footer-left">© 2026 Towodo</div>
         <div class="footer-right">
-            <a href="/cdn-cgi/l/email-protection#ddb5b8b1b1b29da9b2aab2b9b2f3beb2b0" data-lang="tr">İletişim</a>
-            <a href="/cdn-cgi/l/email-protection#fd9598919192bd89928a929992d39e9290" data-lang="en">Contact</a>
+            <a href="mailto:hello@towodo.com" data-lang="tr">İletişim</a>
+            <a href="mailto:hello@towodo.com" data-lang="en">Contact</a>
         </div>
     </div>
 
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
+    <script>
         let currentLang='tr';
 
         (function detectLang(){
